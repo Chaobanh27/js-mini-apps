@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #23415A;
+        }
+        .tab-wrapper{
+            width: 800px;
+            margin: 50px auto;
+        }
+        .tab-wrapper ul{
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+        }
+        .tab-wrapper ul li{
+            float: left;
+            list-style: none;
+            padding: 10px 10px;
+            background: black;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .tab-wrapper ul li img{
+            width: 100%;
+        }
+        .tab-wrapper ul li.active{
+            background: #0d6efd;
+        }
+        .control{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="tab-wrapper">
+            <div class="control mb-3">
+                <button id="prev" class="btn btn-primary">Prev</button>
+                <button id="next" class="btn btn-primary">Next</button>
+            </div>
+            <ul class="tab ">
+                <li>
+                    <img  src="assets/images/stormtrooper.jpg" alt="">
+                </li>
+                <li >
+                    <img  src="assets/images/Vader.jpg" alt="">
+                </li>
+                <li >
+                    <img  src="assets/images/supercar_night_city.jpg" alt="">
+                </li>
+                <li >
+                    <img  src="assets/images/the_mandalorian.jpg" alt="">
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-item" >
+                    <img id="tab-img" class="w-100" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            
+            function activeTab(obj){ 
+                $('.tab-wrapper ul li').removeClass('active');
+                $(obj).addClass("active")
+                let id = $(obj).find("img").attr("src")  //sử dụng để truy cập và lấy giá trị thuộc tính "href" của phần tử "a" đầu tiên được tìm thấy trong phần tử được lưu trữ trong tham số obj.
+                //console.log(id)
+                $("#tab-img").attr({"src" : id})
+            }
+
+            $(".tab li").click(function() {
+                activeTab(this)
+            })
+
+            activeTab($('.tab li:first-child'));
+
+            $("#next").click(function() {
+                let current = $(".tab").find(".active")
+                let next = current.next()
+                let nextImg = $(next).find("img").attr("src")
+                $("#tab-img").attr({"src" : nextImg})
+
+                if(next.length > 0){
+                    current.removeClass("active")
+                    next.addClass("active")
+                }
+                else{
+                    current.removeClass("active")
+                    $(".tab li:first-child").addClass("active")
+                    let currentImg = $(".tab li:first-child").find("img").attr("src")
+                    $("#tab-img").attr({"src" : currentImg})
+                }
+
+            })
+
+            $("#prev").click(function() {
+                let current = $(".tab").find(".active")
+                let prev = current.prev()
+                let currentImg = $(prev).find("img").attr("src")
+                $("#tab-img").attr({"src" : currentImg})
+
+                if(prev.length > 0){
+                    current.removeClass("active")
+                    prev.addClass("active")
+                }
+                else{
+                    current.removeClass("active")
+                    $(".tab li:last-child").addClass("active")
+                    let currentImg = $(".tab li:last-child").find("img").attr("src")
+                    $("#tab-img").attr({"src" : currentImg})
+                }
+                console.log(prev.length)
+            })
+
+            setInterval(function(){
+                $("#next").click()
+            },3000)
+
+
+        })
+    </script>
+</body>
+</html>
