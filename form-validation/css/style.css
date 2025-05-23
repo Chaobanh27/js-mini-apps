@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: linear-gradient(45deg,#8E2DE2,#4A00E0);
+  min-height: 100vh;
+}
+.container-fluid{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  background-color: white;
+  border-radius: 0 !important;
+  width: 500px;
+}
+ul{
+  justify-content: space-evenly;
+  border: none !important;
+}
+a.nav-link{
+  width: 100% !important;
+  border-radius: 0 !important;
+  text-align: center;
+  border: none !important;
+}
+
+form{
+  padding: 20px;
+}
+
+.form-control:focus {
+  border-color:rgba(100,100,100,1)!important;
+  -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+.form-outline.success input{
+  border-color: greenyellow;
+}
+.form-outline.error input{
+  border-color: red;
+}
+.form-outline .error{
+  color: red;
+  font-size: 10px;
+}
+.btn-login,.btn-sign-up{
+  background: linear-gradient(45deg,#8E2DE2,#4A00E0);
+  border-radius: 20px;
+}
