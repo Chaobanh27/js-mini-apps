@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0a23;
+}
+.converter {
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    background: black;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.converter input[type="number"]
+{
+    font-size: 30px;
+    width: 350px;
+    margin-top: 15px;
+}
+#convert-btn{
+    width: 350px;
+    height: 25px;
+    background: #FFD700;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.converter h2{
+    color: white;
+    text-align: center;
+}
+
+.message{
+    display: none;
+    width: 500px;
+    height: 100px;
+    padding-top: 25px;
+    background: black;
+    font-size: 30px;
+    color: white;
+    margin-top: 15px;
+    border: 3px solid white;
+    text-align: center;
+}

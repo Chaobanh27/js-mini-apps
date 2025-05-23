@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1aa7b5;
+}
+
+.checker{
+    padding: 50px;
+    background: #0091ff;
+    color: white;
+    line-height: 32px;
+    border-radius: 15px;
+}
+
+#check-btn{
+    background: #1aa7b5;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}

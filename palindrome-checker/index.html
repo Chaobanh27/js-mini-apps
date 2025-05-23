@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Palindrome Checker" />
+    <meta property=“og:title” content=“Palindrome Checker" />
+    <meta property="og:description" content="A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="application" />
+    <meta property="og:image" content="" />
+    <meta property="og:author" content="ChaoBanh">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <main>
+        <div class="checker">
+            <h3>Enter in text to check for a palindrome:</h3>
+            <input type="text" id="text-input" onchange="checkInput(this.value)" required size="35">
+            <button id="check-btn">Check</button>
+            <p id="result" ></p>
+        </div>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
